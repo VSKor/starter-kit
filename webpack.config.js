@@ -5,7 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
-  entry: APP_DIR + '/main.js',
+  entry: APP_DIR + '/app.jsx',
   output: {
     path: BUILD_DIR,
     filename: 'scripts.js'
@@ -14,12 +14,12 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.js?/,
+        test: /\.jsx?/,
         include: APP_DIR,
         loader: 'babel',
         query: {
           plugins: ['transform-runtime'],
-          presets: ["es2015"]
+          presets: ["es2015", "react"]
         }
       },
       {
