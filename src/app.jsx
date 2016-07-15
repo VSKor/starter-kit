@@ -6,7 +6,7 @@ import {render} from 'react-dom';
 import Test from './components/test/Test.jsx';
 
 class App extends React.Component {
-  render(){
+  render() {
     return <div id="app">
       <Test />
     </div>;
