@@ -1,3 +1,4 @@
+@import "../../scss/variables";
 .test {
   font-size: 26px;
   padding: 10px 15px;
@@ -5,4 +6,5 @@
   text-align: center;
   margin: 15px;
   text-transform: uppercase;
+  background-color: $gray;
 }
