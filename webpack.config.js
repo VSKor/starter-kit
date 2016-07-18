@@ -48,7 +48,9 @@ var config = {
         loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
       }
     ]
-  }
+  },
+
+  plugins: [new webpack.optimize.UglifyJsPlugin()]
 };
 
 if (DEV) {
