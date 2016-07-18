@@ -33,7 +33,19 @@ var config = {
       {
         test: /\.scss?$/,
         include: APP_DIR,
-        loaders: ['style', 'css', 'sass-loader']
+        loaders: ['style', 'css', 'autoprefixer', 'sass-loader']
+      },
+      {
+        test: /\.(jpg|jpeg|gif|png)$/,
+        include: APP_DIR,
+        exclude: /node_modules/,
+        loader:'url-loader?limit=1024&name=images/[name].[ext]'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        include: APP_DIR,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
       }
     ]
   }
