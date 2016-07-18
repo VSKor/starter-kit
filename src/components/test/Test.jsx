@@ -9,13 +9,25 @@ class Test extends React.Component {
     super(props);
 
     this.state = {
-      c: 0
+      c: 0,
+      subs: []
     }
+  }
+
+  subTest() {
+    var newSub;
+    require.ensure([], function (require) {
+      var Sub = require('../sub/Sub.jsx');
+      this.setState({subs: [...this.state.subs, <Sub num={this.state.subs.length} key={this.state.subs.length}/>]});
+    }.bind(this));
   }
 
   render() {
     this.state.c += 1;
-    return <div className="test">react-hot Test {this.state.c}</div>;
+    return <div className="test" onClick={this.subTest.bind(this)}>
+      react-hot Test {this.state.c}
+      <div className="subs">{this.state.subs}</div>
+    </div>;
   }
 }
 
