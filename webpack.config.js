@@ -50,7 +50,9 @@ var config = {
     ]
   },
 
-  plugins: [new webpack.optimize.UglifyJsPlugin()],
+  plugins: [new webpack.optimize.UglifyJsPlugin({
+    exclude: /\.min\.js?/
+  })],
   
   resolve: {
     extensions: ['', '.js', '.jsx'],
