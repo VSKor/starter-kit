@@ -35,6 +35,14 @@ var config = {
         loaders: ['style', 'css', 'sass-loader']
       }
     ]
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      "react": path.resolve(__dirname, 'node_modules/react/dist/react.min.js'),
+      "react-dom": path.resolve(__dirname, 'node_modules/react-dom/dist/react-dom.min.js')
+    }
   }
 };
 
@@ -68,6 +76,8 @@ if (DEV) {
     new webpack.NoErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ];
+
+  delete config.resolve.alias;
 }
 
 module.exports = config;
